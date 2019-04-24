@@ -9,6 +9,7 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import SampleInput from "./component/SampleInputs";
+import Video from "react-native-video";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -25,10 +26,12 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-        <SampleInput onPress={this._onPress} />
+        <Video
+          source={{
+            uri: "http://hogehogehoge.mp4"
+          }}
+          style={styles.backgroundVideo}
+        />
       </View>
     );
   }
@@ -45,6 +48,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     margin: 10
+  },
+  backgroundVideo: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0
   },
   instructions: {
     textAlign: "center",
