@@ -28,7 +28,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <Video
           source={{
-            uri: "http://hogehogehoge.mp4"
+            uri: "https://hogehoge.mp4"
           }}
           style={styles.backgroundVideo}
         />
